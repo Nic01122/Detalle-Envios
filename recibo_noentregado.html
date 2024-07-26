@@ -75,11 +75,11 @@
 
         // Obtener los parámetros de la URL
         const idVisita = getParameterByName('idVisita');
-        const numeroEnvioVisita = getParameterByName('numeroEnvioVis');
+        const numeroEnvioVisita = getParameterByName('numeroEnvioVisita');
         const horaVisita = getParameterByName('horaVisita');
         const diaVisita = getParameterByName('diaVisita');
         const ubicacionVisita = getParameterByName('ubicacionVisita');
-        const fotoPuera = getParameterByName('fotoPuera');
+        const fotoPuerta = getParameterByName('fotoPuerta');
         const eventoVisita = getParameterByName('eventoVisita');
         const observacionesVisita = getParameterByName('observacionesVisita');
         const numeroCliente = getParameterByName('numeroCliente');
@@ -91,13 +91,13 @@
         const registroHTML = `
             <div class="registro">
                 <p><span class="label">ID Visita:</span> ${idVisita}</p>
-                <p><span class="label">Número de Envío:</span> ${numeroEnvioVis}</p>
+                <p><span class="label">Número de Envío:</span> ${numeroEnvioVisita}</p>
                 <p><span class="label">Hora de la Visita:</span> ${horaVisita}</p>
                 <p><span class="label">Día de la Visita:</span> ${diaVisita}</p>
                 <p><span class="label">Ubicación de la Visita:</span> ${ubicacionVisita}</p>
                 <div class="image-container">
-                    <p><span class="label">Foto de la Puera:</span></p>
-                    <img src="${fotoPuerta}" alt="Foto de la Puera">
+                    <p><span class="label">Foto de la Puerta:</span></p>
+                    <img src="${fotoPuerta}" alt="Foto de la Puerta">
                 </div>
                 <p><span class="label">Evento de la Visita:</span> ${eventoVisita}</p>
                 <p><span class="label">Observaciones de la Visita:</span> ${observacionesVisita}</p>
