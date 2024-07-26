@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -42,6 +41,18 @@
             font-weight: bold;
             color: #555;
         }
+        .image-container {
+            text-align: center;
+            margin: 10px 0;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            background: #f4f4f9;
+        }
     </style>
 </head>
 <body>
@@ -54,12 +65,12 @@
         // Función para obtener los parámetros de la URL
         function getParameterByName(name) {
             const url = window.location.href; // Obtiene la URL completa
-            const nameEscaped = name.replace(/[\[\]]/g, '\$&'); // Escapa caracteres especiales
+            const nameEscaped = name.replace(/[\[\]]/g, '\\$&'); // Escapa caracteres especiales
             const regex = new RegExp('[?&]' + nameEscaped + '(=([^&#]*)|&|#|$)'); // Crea una expresión regular para encontrar el parámetro
             const results = regex.exec(url); // Ejecuta la expresión regular en la URL
             if (!results) return null; // Si no encuentra resultados, retorna null
             if (!results[2]) return ''; // Si no hay un valor después del '=', retorna una cadena vacía
-            return decodeURIComponent(results[2].replace(/\+/g, ' ')); // Decodifica el valor del parámetro y reemplaza los '+' con espacios
+            return decodeURIComponent(results[2].replace(/\\+/g, ' ')); // Decodifica el valor del parámetro y reemplaza los '+' con espacios
         }
 
         // Obtener los parámetros de la URL
@@ -68,7 +79,7 @@
         const horaVisita = getParameterByName('horaVisita');
         const diaVisita = getParameterByName('diaVisita');
         const ubicacionVisita = getParameterByName('ubicacionVisita');
-        const fotoPuerta = getParameterByName('fotoPuerta');
+        const fotoPuera = getParameterByName('fotoPuera');
         const eventoVisita = getParameterByName('eventoVisita');
         const observacionesVisita = getParameterByName('observacionesVisita');
         const numeroCliente = getParameterByName('numeroCliente');
@@ -84,7 +95,10 @@
                 <p><span class="label">Hora de la Visita:</span> ${horaVisita}</p>
                 <p><span class="label">Día de la Visita:</span> ${diaVisita}</p>
                 <p><span class="label">Ubicación de la Visita:</span> ${ubicacionVisita}</p>
-                <p><span class="label">Foto de la Puerta:</span> ${fotoPuerta}</p>
+                <div class="image-container">
+                    <p><span class="label">Foto de la Puera:</span></p>
+                    <img src="${fotoPuerta}" alt="Foto de la Puera">
+                </div>
                 <p><span class="label">Evento de la Visita:</span> ${eventoVisita}</p>
                 <p><span class="label">Observaciones de la Visita:</span> ${observacionesVisita}</p>
                 <p><span class="label">Número del Cliente:</span> ${numeroCliente}</p>
