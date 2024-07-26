@@ -52,6 +52,21 @@
             padding: 5px;
             background: #f4f4f9;
         }
+        .section-title {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #4CAF50;
+        }
+        .details {
+            margin: 10px 0;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        .details p {
+            margin: 5px 0;
+        }
     </style>
 </head>
 <body>
@@ -86,20 +101,32 @@
         const registrosContainer = document.getElementById('registros');
         const registroHTML = `
             <div class="registro">
-                <p><span class="label">ID Visita:</span> ${idVisita}</p>
-                <p><span class="label">Número de Envío:</span> ${numeroEnvioVis}</p>
-                <p><span class="label">Hora de la Visita:</span> ${horaVisita}</p>
-                <p><span class="label">Día de la Visita:</span> ${diaVisita}</p>
-                <p><span class="label">Ubicación de la Visita:</span> ${ubicacionVisita}</p>
+                <p class="section-title">Detalles de la Visita</p>
+                <div class="details">
+                    <p><span class="label">ID Visita:</span> ${idVisita}</p>
+                    <p><span class="label">Número de Envío:</span> ${numeroEnvioVis}</p>
+                    <p><span class="label">Hora de la Visita:</span> ${horaVisita}</p>
+                    <p><span class="label">Día de la Visita:</span> ${diaVisita}</p>
+                    <p><span class="label">Ubicación de la Visita:</span> ${ubicacionVisita}</p>
+                </div>
                 <div class="image-container">
-                    <p><span class="label">Foto de la Puerta:</span></p>
+                    <p class="label">Foto de la Puerta:</p>
                     <img src="${fotoPuerta}" alt="Foto de la Puerta">
                 </div>
-                <p><span class="label">Evento de la Visita:</span> ${eventoVisita}</p>
-                <p><span class="label">Observaciones de la Visita:</span> ${observacionesVisita}</p>
-                <p><span class="label">Número del Cliente:</span> ${numeroCliente}</p>
-                <p><span class="label">Nombre del Cliente:</span> ${nombreCliente}</p>
-                <p><span class="label">Audio de la Visita:</span> ${audioVisita}</p>
+                <p class="section-title">Evento de la Visita</p>
+                <div class="details">
+                    <p><span class="label">Evento:</span> ${eventoVisita}</p>
+                    <p><span class="label">Observaciones:</span> ${observacionesVisita}</p>
+                </div>
+                <p class="section-title">Detalles del Cliente</p>
+                <div class="details">
+                    <p><span class="label">Número del Cliente:</span> ${numeroCliente}</p>
+                    <p><span class="label">Nombre del Cliente:</span> ${nombreCliente}</p>
+                </div>
+                <p class="section-title">Audio de la Visita</p>
+                <div class="details">
+                    <p><span class="label">Audio:</span> ${audioVisita}</p>
+                </div>
             </div>
             <hr>
         `;
